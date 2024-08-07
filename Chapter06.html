@@ -1,0 +1,403 @@
+<!DOCTYPE HTML>
+<html lang="zh" class="light" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title> 第六章 分词  - 语法俱乐部</title>
+
+
+        <!-- Custom HTML head -->
+        
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="favicon.svg">
+        <link rel="shortcut icon" href="favicon.png">
+        <link rel="stylesheet" href="css/variables.css">
+        <link rel="stylesheet" href="css/general.css">
+        <link rel="stylesheet" href="css/chrome.css">
+        <link rel="stylesheet" href="css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="highlight.css">
+        <link rel="stylesheet" href="tomorrow-night.css">
+        <link rel="stylesheet" href="ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+
+    </head>
+    <body class="sidebar-visible no-js">
+    <div id="body-container">
+        <!-- Provide site root to javascript -->
+        <script>
+            var path_to_root = "";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('light')
+            html.classList.add(theme);
+            var body = document.querySelector('body');
+            body.classList.remove('no-js')
+            body.classList.add('js');
+        </script>
+
+        <input type="checkbox" id="sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            var body = document.querySelector('body');
+            var sidebar = null;
+            var sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+            }
+            sidebar_toggle.checked = sidebar === 'visible';
+            body.classList.remove('sidebar-visible');
+            body.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded "><a href="index.html">语法俱乐部</a></li><li class="chapter-item expanded "><a href="Preface.html">序：我学英语的经验</a></li><li class="chapter-item expanded "><a href="Introduction.html">前言 </a></li><li class="chapter-item expanded "><a href="Chapter01.html">第一篇 初级句型--简单句（Simple Sentences） </a></li><li><ol class="section"><li class="chapter-item expanded "><a href="Chapter01.html"> 第一章 基本句型及补语 </a></li><li class="chapter-item expanded "><a href="Chapter02.html"> 第二章 名词词组与冠词 </a></li><li class="chapter-item expanded "><a href="Chapter03.html"> 第三章 动词时态 </a></li><li class="chapter-item expanded "><a href="Chapter04.html"> 第四章 不定词短语 </a></li><li class="chapter-item expanded "><a href="Chapter05.html"> 第五章 动名词 </a></li><li class="chapter-item expanded "><a href="Chapter06.html" class="active"> 第六章 分词 </a></li><li class="chapter-item expanded "><a href="Chapter07.html"> 第七章 形容词 </a></li><li class="chapter-item expanded "><a href="Chapter08.html"> 第八章 副词 </a></li><li class="chapter-item expanded "><a href="Chapter09.html"> 第九章 语气 </a></li><li class="chapter-item expanded "><a href="Chapter10.html"> 第十章 介系词 </a></li><li class="chapter-item expanded "><a href="Chapter11.html"> 第十一章 主语动词一致性 </a></li></ol></li><li class="chapter-item expanded "><a href="Chapter12.html">第二篇 中级句型--复句（Complex Sentences）、合句（Compound Sentences） </a></li><li><ol class="section"><li class="chapter-item expanded "><a href="Chapter12.html"> 第十二章 名词从句 </a></li><li class="chapter-item expanded "><a href="Chapter13.html"> 第十三章 副词从句 </a></li><li class="chapter-item expanded "><a href="Chapter14.html"> 第十四章 关系从句 </a></li><li class="chapter-item expanded "><a href="Chapter15.html"> 第十五章 对等连接词与对等从句 </a></li></ol></li><li class="chapter-item expanded "><a href="Chapter16.html">第三篇 高级句型--简化从句（Reduced Clauses）、倒装句（Inverted Sentences） </a></li><li><ol class="section"><li class="chapter-item expanded "><a href="Chapter16.html"> 第十六章 从属从句简化的通则 </a></li><li class="chapter-item expanded "><a href="Chapter17.html"> 第十七章 形容词从句简化 </a></li><li class="chapter-item expanded "><a href="Chapter18.html"> 第十八章 名词从句简化 </a></li><li class="chapter-item expanded "><a href="Chapter19.html"> 第十九章 副词从句简化之一 </a></li><li class="chapter-item expanded "><a href="Chapter20.html"> 第二十章 副词从句简化之二 </a></li><li class="chapter-item expanded "><a href="Chapter21.html"> 第二十一章 简化从句练习 </a></li><li class="chapter-item expanded "><a href="Chapter22.html"> 第二十二章 倒装句 </a></li></ol></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <!-- Track and set sidebar scroll position -->
+        <script>
+            var sidebarScrollbox = document.querySelector('#sidebar .sidebar-scrollbox');
+            sidebarScrollbox.addEventListener('click', function(e) {
+                if (e.target.tagName === 'A') {
+                    sessionStorage.setItem('sidebar-scroll', sidebarScrollbox.scrollTop);
+                }
+            }, { passive: true });
+            var sidebarScrollTop = sessionStorage.getItem('sidebar-scroll');
+            sessionStorage.removeItem('sidebar-scroll');
+            if (sidebarScrollTop) {
+                // preserve sidebar scroll position when navigating via links within sidebar
+                sidebarScrollbox.scrollTop = sidebarScrollTop;
+            } else {
+                // scroll sidebar to current active section when navigating via "next/previous chapter" buttons
+                var activeSection = document.querySelector('#sidebar .active');
+                if (activeSection) {
+                    activeSection.scrollIntoView({ block: 'center' });
+                }
+            }
+        </script>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="sidebar-toggle" class="icon-button" for="sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </label>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">语法俱乐部</h1>
+
+                    <div class="right-buttons">
+                        <a href="print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1 id="第六章-分词"><a class="header" href="#第六章-分词">第六章 分词</a></h1>
+<p>传统语法所谓的动状词（Verbals）包含前两章处理过的不定词、动名词。另外是两种分词（现在分词与过去分词)，可视为形容词。甚至在出现于被动态、进行式的时候，仍然可以把过去分词、现在分词视为形容词。当然严格说来，这种看法在语言学的区分上并不十分严谨。可是，就一般语言学习者而言，把分词一律视为形容词可收驾简驭繁的效果，仍不失为值得推广的观念。尤其是进入复杂的简化从句化（Reduction）时，这种观念可以使句型诠释较统一、句型变化较灵活，所以笔者大力主张把分词一律视为形容词。</p>
+<h2 id="分词与形容词的比较"><a class="header" href="#分词与形容词的比较">分词与形容词的比较</a></h2>
+<p>形容词是用来形容名词的，在句中有两种位置：</p>
+<ol>
+<li>
+<p>名词短语中</p>
+</li>
+<li>
+<p>补语位置</p>
+</li>
+</ol>
+<p>这两个位置都可以放分词来取代形容词，同样达到修饰名词的目的。</p>
+<h4 id="一现在分词与形容词的关系"><a class="header" href="#一现在分词与形容词的关系">一、现在分词与形容词的关系</a></h4>
+<ul>
+<li>
+<p>例： <Note>That black dog</Note> doesn’t bite. （那只黑狗不咬人。）</p>
+</li>
+<li><p>&emsp;&emsp; <Note>A barking dog</Note> doesn’t bite. （爱叫的狗不咬人。）</p>
+</li>
+</ul>
+<p>在这两个名词短语中，现在分词 barking 与普通形容词 black 一样放在名词短语中间，一样用来修饰名词 dog，所以都可以当做形容词看待。只不过 barking 这个现在分词要加上进行的暗示，解释为“正在叫的，一直叫的”，这个进行的暗示（“正在”、“一直”）就可以视为现在分词 -ing 字尾的弦外之音。许多形容词字尾都有它的弦外之音，像是 -ful（“很”，full of），例如 useful；再如 -ish（ 一点），例如 grayish；以及 -less（没、不），例如 valueless。同样的，-ing 也可以视为形容词字尾，弦外之音是“正在”、“一直”。</p>
+<ul>
+<li>
+<p>例： The dog is <Note>black</Note>. （那是只黑狗。）</p>
+</li>
+<li>
+<p>   The dog is <Note>barking</Note>. （那只狗在叫。）</p>
+</li>
+</ul>
+<p>现在分词 barking 和普通形容词 black 都出现于 be 动词后面，都可以视为补语，形容主语 dog，只不过现在分词 -ing 字尾要加上进行的暗示。当然，一般语法说 be+Ving 是进行式的动词短语。可是，并不是 is barking 才能解释为进行意义的“正在叫”。a barking dog 不也一样是“正在叫”的狗吗？所以，还是把 barking 一律解释为形容词比较有一致性。</p>
+<h4 id="二过去分词与形容词的关系"><a class="header" href="#二过去分词与形容词的关系">二、过去分词与形容词的关系</a></h4>
+<p>过去分词与现在分词一样，可以出现在两种形容词位置来形容名词，不过它的弦外之音是被动或完成的暗示，要加上“被”、“已经”来解释。</p>
+<ul>
+<li>
+<p>例： <Note>Clean water</Note> is safe to drink. （干净水可以安全饮用。）</p>
+</li>
+<li><p>&emsp;&emsp; <Note>Boiled water</Note> is safe to drink. （开水可以安全饮用。）</p>
+</li>
+</ul>
+<p>过去分词 boiled 和形容词 clean 同样放在名词短语中的位置，同样形容 water，只不过多了“被煮过了”的暗示。这种“被动”、“完成”的意思也就是过去分词的弦外之音。除此之外，它与一般的形容词并无不同。</p>
+<ul>
+<li>
+<p>例： The water is <Note>clean</Note>. （水很干净。）</p>
+</li>
+<li>
+<p>   The water is <Note>boiled</Note>. （水是煮开过的。）</p>
+</li>
+</ul>
+<p>过去分词 boiled 可以视为和 clean —样，是形容词补语，放在 be 动词后面来形容主语 water。一般语法说 be+Ven 是被动态。可是，离开了 be 动词，boiled water 还是要解释为“被煮过的水”。所以，“被动”的意味和 be 动词之间没有必然的关联性，不如直接把过去分词本身视为形容词。况且，放在 be 动词后面的过去分词，往往也不是当作被动来解释，而要解释为“完成”的暗示。所以：</p>
+<p>be+Ven ＝ 被动态</p>
+<p>这个公式有误导之嫌。不如把过去分词释放开来，单独看作形容词，解释为“被”或“已经……了”的暗示。</p>
+<h4 id="三带有完成暗示而非被动态的过去分词"><a class="header" href="#三带有完成暗示而非被动态的过去分词">三、带有“完成”暗示而非“被动态”的过去分词</a></h4>
+<ul>
+<li>例： I can't find my wallet. It<Note>’s gone</Note>. （我找不到皮夹。它不见了。）</li>
+</ul>
+<p>这个例子中，is gone 符合“be+Ven”的结构，但不能解释为被动态，因为 go 是不及物动词，本身没有被动态可言。所以句型应作如此分析：</p>
+<ul>
+<li> <Note note="S">It</Note> <Note note="V">is</Note> <Note note="C">gone</Note></li>
+</ul>
+<p>过去分词 gone 是形容词补语，有“完成”的暗示，解释为“跑掉了，不见了”，来形容主语 it。</p>
+<ul>
+<li>例： The leaves <Note>are</Note> all <Note>fallen</Note>, now that winter is here. （冬天一到，叶子全掉光了。）</li>
+</ul>
+<p>同样的，fall 是不及物动词，没有被动态，所以 are fallen 虽然是“be+Ven”的构造，也不是被动态，而应解释为完成，“落下来了”。句型是：</p>
+<ul>
+<li> <Note note="S">The leaves</Note> <Note note="V">are</Note> <Note note="C">fallen</Note>. （叶子全掉下来了。）</li>
+</ul>
+<p>过去分词仍然做形容词解释。</p>
+<ul>
+<li>I'<Note>m done</Note>. It’s all yours. （我已经好了，该你用了。）</li>
+</ul>
+<p>如果在学校用完了电脑，让给在你后面排队的人，就可以说这句话。这里的 do 固然是及物动词，可是不能解释为“我被做了”，只能说“我做完了”。因此 am done 仍然不是被动态，应该把 done 视为形容词，解释为完成意义的“做完了”。</p>
+<h2 id="现在分词与过去分词的区分"><a class="header" href="#现在分词与过去分词的区分">现在分词与过去分词的区分</a></h2>
+<p>两种分词都是形容词，差别在于现在分词有“进行”的暗示，过去分词有“被动”、“完成”的暗示，大致依此区分就不会错。以下检讨两种比较需要注意的情况。</p>
+<h4 id="一表示感觉的分词"><a class="header" href="#一表示感觉的分词">一、表示“感觉”的分词</a></h4>
+<ul>
+<li>
+<p>例： He is <Note>disappointed</Note> at his scores. （他对分数很失望。）</p>
+</li>
+<li>
+<p>   His scores are <Note>disappointing</Note>. （他的分数令人失望。）</p>
+</li>
+</ul>
+<p>有一些表示“感觉”的字，像 disappoint、satisfy、surprise、amaze、astonish、scare、terrify、please、tire、exhaust… 等，该用现在分词还是过去分词，有时用中文的“主动”、“被动”一时会想不清楚。像上面的两个例子，可以先还原为这种形状：</p>
+<ul>
+<li> <Note note="S">His scores</Note> <Note note="V">disappoint</Note> <Note note="O">him</Note>. （他的分数令他失望。）</li>
+</ul>
+<p>这样就比较容易看出来，如果用 He 做主语，应该是被动态，因为 he 原来是宾语的 him。改成被动态为：</p>
+<ul>
+<li>He is disappointed at his scores. （他对分数很失望。）</li>
+</ul>
+<p>虽然是被动态的形状，可是这些表示“感觉”的字眼被动的意味不明显，都是形容词意味大过动作的意味，所以后面不用被动态的介系词 by，而用其他介系词（上例中就是接 at his scores）。</p>
+<p>另外，如果用 His scores 做主语，就可以看出来要用主动态，因为 His scores 原来就是主语，于是变成：</p>
+<ul>
+<li>His scores are <Note>disappointing</Note>. （他的分数令人失望。）</li>
+</ul>
+<p>许多表示“感觉”的字眼，都可以依此类推来决定该用现在分词还是过去分词。</p>
+<h4 id="二词根词首分析"><a class="header" href="#二词根词首分析">二、词根词首分析</a></h4>
+<p>现在分词与过去分词之间的选择，牵涉到主动被动的判断，所以和动词的及物不及物有关。这是一个相当麻烦的问题：怎么看动词是及物还是不及物？如果每个动词还要去背它是及物或不及物，那太辛苦了。英语动词很多，背不胜背，可是使用到的词根有限。所以做一下词根词首的分析往往可以决定及物不及物的问题。</p>
+<ul>
+<li>
+<p>例： Water <Note>consists</Note> of hydrogen and oxygen.</p>
+</li>
+<li>
+<p>   Water is <Note>composed</Note> of hydrogen and oxygen.</p>
+</li>
+<li>
+<p>  （水由氢分子和氧分子组成。）</p>
+</li>
+</ul>
+<p>consist 的词根 sist 是 stand 或 be 的意思，都是不及物，配合词首 con(together)，可以解释为 stand together 或 be together。既然它是不及物动词，自然没有被动态，也没有宾语。可是 compose 就不同了。词根 pos 解释为 place（放），是及物动词，所以可以有被动态，才可以用到过去分词 composed。</p>
+<h2 id="现在分词与过去分词混合的形态"><a class="header" href="#现在分词与过去分词混合的形态">现在分词与过去分词混合的形态</a></h2>
+<p>如果把分词认定为形容词，那么看到现在分词与过去分词一同出现，就不必去死背冗长的动词变化，只把它当作两个以上的形容词，分别解释就可以了。而动词诠释与句型分析也就自然随之简化。</p>
+<ul>
+<li>例： I have no comment to make while <Note note="S">the case</Note> <Note note="V">is</Note> <Note note="C">being investigated</Note> by police. （本案正由警方调查中，我暂时不予置评。）</li>
+</ul>
+<p>本句只要把 be 动词视为动词，being investigated 视为两个形容词，就十分简单。being 是现在分词的形容词，去掉不必翻译的 be 部分，只须解释为“正在”。investigated 是过去分词，再加上被动的暗示，解释为“被调查”。合在一起，这两个分词就是“正在被调查”，作为补语来形容主语“本案”。</p>
+<h2 id="形容词从句简化的结果"><a class="header" href="#形容词从句简化的结果">形容词从句简化的结果</a></h2>
+<p>形容词从句简化之后往往剩下分词。在此先初步介绍，完整的简化从句概念留待复句探讨完毕之后再详加整理。</p>
+<h4 id="一ven"><a class="header" href="#一ven">一、Ven</a></h4>
+<ul>
+<li>例： Toys <Note>made in Taiwan</Note> are much better now. （现在台湾制造的玩具好多了。）</li>
+</ul>
+<p>这个过去分词短语 made in Taiwan 就是形容词从句的简化。原句是：</p>
+<ul>
+<li>例： Toys <Note>which are made in Taiwan</Note> are much better now.</li>
+</ul>
+<p>这个形容词从句中主语 which 与 Toys 重复，动词是空的 be 动词。去掉这两个部分后剩下的分词 made in Taiwan 还是形容词类，因而可以简化。</p>
+<h4 id="二ving"><a class="header" href="#二ving">二、Ving</a></h4>
+<ul>
+<li>例： Children <Note>living in orphanages</Note> make a lot of friends. （在孤儿院生活的小朋友可以交很多朋友。）</li>
+</ul>
+<p>同样的，分词部分是 who are living in orphanages 这个形容词从句的简化，原因也相同，省掉主语 who 和 be 动词，剩下形容词短语 living… 来取代形容词从句。</p>
+<h4 id="三being-ven"><a class="header" href="#三being-ven">三.being Ven</a></h4>
+<ul>
+<li>例： The vase <Note>being auctioned</Note> now is a Ming china. （正在拍卖的花瓶是明朝的瓷器。）</li>
+</ul>
+<p>这里的 being auctioned 是 which is being auctioned 的简化。其中 being 表示“正在”，auctioned 表示“被拍卖”，如果没有 being，只剩下过去分词 auctioned，就有“完成”的暗示，读者可能会以为“已经卖掉了”。加上 being 是为了去除这种误会，增加表达的清楚性。</p>
+<h2 id="副词从句简化的结果"><a class="header" href="#副词从句简化的结果">副词从句简化的结果</a></h2>
+<p>副词从句如果简化为分词，传统语法就叫做“分词构句”。之所以取这个名称，是因为在传统语法的观察中分词是形容词，而副词从句是副词类，简化之后词类不一致，所以取一个名称来称呼它。其实这里的变化和上一节的变化差不多，只是原来的从句词类不同。</p>
+<h4 id="一ven-1"><a class="header" href="#一ven-1">一、Ven</a></h4>
+<ul>
+<li>例： <Note>Wounded in war</Note>, the soldier was sent home. （在战场上受了伤，士兵就被遣送回家了。）</li>
+</ul>
+<p>这个分词短语是 After/Because he was wounded in war 这个副词从句的简化。简化的原因仍然一样：主语 he 就是 the soldier，所以可以省略，动词是 be 动词 was，故可以省略。一旦主语动词没有了，语法上也不需要连接词了。所以 After 或 Because 也就可以省掉，而只剩下补语部分的分词短语 wounded in war。这就是分词构句。</p>
+<h4 id="二ving-1"><a class="header" href="#二ving-1">二、Ving</a></h4>
+<ul>
+<li>例： The pigeon, <Note>after flying 200 miles</Note>, was caught up in a net. （这只鸽子在飞了 200 英里之后被网子网住了。）</li>
+</ul>
+<p>本句中底线部分原来是副词从句 after it flew 200 miles。因为主语 it 就是 the pigeon，因而可以省略。再下来没有 be 动词可省，就要先改成进行式（after it was flying…）使它有 be 动词，才可成功地省掉动词，剩下补语部分。去掉主语、动词后，连接词 after 也可以省掉。可是副词从句的连接词有意义，Before, When 和 After 的意义都不一样，所以可以选择留下来，就成了 after flying 200 miles。这也是分词构句。</p>
+<h4 id="三having-ven"><a class="header" href="#三having-ven">三、having Ven</a></h4>
+<ul>
+<li>例： <Note>Having finished the day's work</Note>, the secretary went home. （做完一天的工作后，秘书回家去了。）</li>
+</ul>
+<p>加底线部分原本是副词从句 She had finished the day's work。简化的原因还是因为主语相同。而由于动词部分没有 be 动词就不能进一步简化下去，因此改成 having finished… 的现在分词形态，等于前面省去 be 动词，而留下补语部分。</p>
+<h2 id="结语"><a class="header" href="#结语">结语</a></h2>
+<p>这是动状词的最后一讲。若要深入探讨分词，就得接触到简化从句，而简化从句又得建立在复句结构上。所以，进一步的探讨要等复句结构介绍完毕后才能进行。而在进入复句之前，还有一些小细节要先处理。下一章我们就来谈谈形容词的用法。</p>
+<h2 id="test"><a class="header" href="#test">Test</a></h2>
+<p>下面有篇文章，是改写自一篇阅读测验题目，把每个句子中都放进去一个以上的现在分词（pp）或过去分词（Ven），偶尔也有几个动名词（Gr）或不定词（Inf），请读者看看这些动状词的用法，与所学过的观念印证一下。</p>
+<p>A decade ago, nearly a million and a half elephants were <Note>living</Note> in Africa. During the past ten years, the number of elephants has dwindled to about one half. These elephants are still <Note>being</Note> <Note>killed</Note> for their tusks, which are worth a lot of money, in spite of an <Note>increasing</Note> outcry against elephant <Note>hunting</Note>. Most elephants <Note>killed</Note> today die in the hand of illegal hunters.</p>
+<p><Test><p style="margin-left: -1em">A decade ago, nearly a million and a half elephants were <Note note="pp">living</Note> in Africa. During the past ten years, the number of elephants has dwindled to about one half. These elephants are still <Note note="pp">being</Note> <Note note="Ven">killed</Note> for their tusks, which are worth a lot of money, in spite of an <Note note="pp">increasing</Note> outcry against elephant <Note note="Gr">hunting</Note>. Most elephants <Note note="Ven">killed</Note> today die in the hand of illegal hunters.</p></Test></p>
+<p>A <Note>grass-consuming</Note> animal, the elephant eats as much as 300 pounds a day when fully <Note>grown</Note>. <Note>Wandering</Note> far and wide in their search for food, elephants can move dozens of miles a day. <Note>Failing</Note> <Note>to find the</Note> grasses they like best, they may turn to the trees and eat them.</p>
+<p><Test><p style="margin-left: -1em">A <Note note="pp">grass-consuming</Note> animal, the elephant eats as much as 300 pounds a day when fully <Note note="Ven">grown</Note>. <Note note="pp">Wandering</Note> far and wide in their search for food, elephants can move dozens of miles a day. <Note note="pp">Failing</Note> <Note note="Inf">to find the</Note> grasses they like best, they may turn to the trees and eat them.</p></Test></p>
+<p>Today, the <Note>remaining</Note> grasslands for the elephant are seriously <Note>reduced</Note>. Many places along their migration routes have <Note>been</Note> <Note>turned</Note> into farms. Some elephants are <Note>killed</Note> by farmers while <Note>feeding</Note> on the farms.</p>
+<p><Test><p style="margin-left: -1em">Today, the <Note note="pp">remaining</Note> grasslands for the elephant are seriously <Note note="Ven">reduced</Note>. Many places along their migration routes have <Note note="Ven">been</Note> <Note note="Ven">turned</Note> into farms. Some elephants are <Note note="Ven">killed</Note> by farmers while <Note note="pp">feeding</Note> on the farms.</p></Test></p>
+<p>What can the people do here in Taiwan about a <Note>threatened</Note> animal <Note>living</Note> so far away? First, we should know that there is a law <Note>protecting</Note> elephants, even here. People cannot buy or smuggle items <Note>made</Note> from ivory or any part of the elephant's body. Some <Note>handicapped</Note> persons <Note>living</Note> on <Note>making</Note> name chops have <Note>been</Note> <Note>protesting</Note> that the law impairs their livelihood, <Note>making</Note> it impossible for them <Note>to earn</Note> money. There are, of course, many substitute materials for elephant tusks, water buffalo horns <Note>being</Note> an important one.</p>
+<p><Test><p style="margin-left: -1em">What can the people do here in Taiwan about a <Note note="Ven">threatened</Note> animal <Note note="pp">living</Note> so far away? First, we should know that there is a law <Note note="pp">protecting</Note> elephants, even here. People cannot buy or smuggle items <Note note="Ven">made</Note> from ivory or any part of the elephant's body. Some <Note note="Ven">handicapped</Note> persons <Note note="pp">living</Note> on <Note note="Gr">making</Note> name chops have <Note note="Ven">been</Note> <Note note="pp">protesting</Note> that the law impairs their livelihood, <Note note="pp">making</Note> it impossible for them <Note note="Inf">to earn</Note> money. There are, of course, many substitute materials for elephant tusks, water buffalo horns <Note note="pp">being</Note> an important one.</p></Test></p>
+<p>Most countries are now no longer <Note>importing</Note> ivory. It is <Note>hoped</Note> that the ban on <Note>buying</Note> or <Note>selling</Note> ivory will save the <Note>remaining</Note> African elephants. Wildlife conservation organizations like the WWF are not <Note>facing</Note> the problem <Note>lying down</Note>. <Note>Claiming</Note> that the <Note>ivory-producing</Note> countries are unable <Note>to protect</Note> the elephants there, they are <Note>proposing</Note> some <Note>market-oriented</Note> approaches to <Note>solving</Note> the problem.</p>
+<p><Test><p style="margin-left: -1em">Most countries are now no longer <Note note="pp">importing</Note> ivory. It is <Note note="Ven">hoped</Note> that the ban on <Note note="Gr">buying</Note> or <Note note="Gr">selling</Note> ivory will save the <Note note="pp">remaining</Note> African elephants. Wildlife conservation organizations like the WWF are not <Note note="pp">facing</Note> the problem <Note note="pp">lying down</Note>. <Note note="pp">Claiming</Note> that the <Note note="pp">ivory-producing</Note> countries are unable <Note note="Inf">to protect</Note> the elephants there, they are <Note note="pp">proposing</Note> some <Note note="Ven">market-oriented</Note> approaches to <Note note="Gr">solving</Note> the problem.</p></Test></p>
+<h4 id="译文"><a class="header" href="#译文">译文：</a></h4>
+<p>10 年前，几近 150 万头大象还在非洲存活。而这 10 年来，大象数目已减少了一半。尽管对偷猎大象的谴责日渐高涨，但为了获得贵重的象牙，这些大象仍一直遭到猎杀如今遇害的大象大都死于非法盗猎者之手。</p>
+<p>大象是草食动物，成年象一天可吃掉 300 磅的草。长途跋涉、到处寻找食物时，大象一天可移动数十英里的距离。若找不到最喜欢的草，大象会转而吃树。</p>
+<p>今日仅存、可供大象活动的草原已严重减少。大象迁移路线上有多处已开辟成农场。有些大象在农场觅食时被农人打死。</p>
+<p>在台湾的人，对遥远地方这种饱受威胁的动物能出什么力？首先，我们要了解大象受法律保护，在台湾亦然。象牙或大象身体任何部分的制品都禁止走私、买卖。有些以刻印维生的残障人士抗议这条法律侵害他们的生计，让他们不赚钱。当然象牙有许多替代材料，很主要的一种就是水牛角。</p>
+<p>大部分国家已不再进口象牙。希望买卖象牙的禁令能挽救现存的非洲象。野生动物保护组织，如世界自然基金会，面对这个问题也不是纯然束手无策。他们表示象牙生产国无法保护国内的大象，所以提出了一些市场导向的方法来解决这一问题。</p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="Chapter05.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+
+                            <a rel="next prefetch" href="Chapter07.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="Chapter05.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+
+                    <a rel="next prefetch" href="Chapter07.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="elasticlunr.min.js"></script>
+        <script src="mark.min.js"></script>
+        <script src="searcher.js"></script>
+
+        <script src="clipboard.min.js"></script>
+        <script src="highlight.js"></script>
+        <script src="book.js"></script>
+
+        <!-- Custom JS scripts -->
+
+
+    </div>
+    </body>
+</html>
